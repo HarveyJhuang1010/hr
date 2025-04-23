@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="margin: auto; width: 50%;">
+
+    <a href="/joblist" style="color: blue">return job list</a>
+    <p></p>
+
+    {% if job %}
+        <div class="position_name">
+            <h2>Job Title: {{job.job_name}} </h2>
+
+            City:
+            {{job.city_name}}
+            <p></p>
+        </div>
+
+        <br>
+
+        <div class="position_responsibility" style="width:600px;">
+            <h3>Job Responsibility</h3>
+            <pre style="font-size: 16px">
+                {{job.job_responsibility}}
+            </pre>
+            <p></p>
+        </div>
+
+        <br>
+
+        <div class="position_requirement" style="width:600px;">
+            <h3>Job Requirement</h3>
+            <pre style="font-size: 16px">
+                {{job.job_requirements}}
+            </pre>
+            <p></p>
+        </div>
+
+        <br>
+
+        <div class="apply_position">
+            <input type="button" style="width: 128px;background-color: lightblue;" value="Apply">
+        </div>
+    {% else %}
+        <p>Position is closed</p>
+    {% endif %}
+{% endblock %}
+</div>
